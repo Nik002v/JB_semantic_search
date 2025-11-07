@@ -13,7 +13,7 @@ The project can be run locally or on **Google Colab with a free T4 GPU** for fas
    Lists all required Python libraries used in the project for data processing, embedding, and vector search.
 
 2. **Configuration (`Config`)**  
-   Contains configuration settings, including API keys, vector database parameters, and fine-tuning hyperparameters.
+   Contains configuration settings, including vector database parameters, and fine-tuning hyperparameters.
 
 3. **Client (`CLIENT`)**  
    Code for interacting with the search engine or vector database, sending queries, and retrieving results.
