@@ -69,9 +69,3 @@ You can run the notebook directly in **Google Colab**:
 - `Config.func_name_embedding` controls whether embeddings are computed from function names or full function bodies.  
 - `Config.vector_index_config` contains Weaviate HNSW hyperparameters affecting search metrics.  
 - Everything runs in the notebook, no separate `requirements.txt` is required.
-
----
-
-## Link to GitHub Repository
-
-[JB_semantic_search Repository](https://github.com/Nik002v/JB_semantic_search/tree/main)
