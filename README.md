@@ -1,71 +1,77 @@
 # JB Semantic Search
 
-This repository contains the implementation of a **semantic search system for code and documents**, including fine-tuning, vector storage, and evaluation metrics.  
-The project can be run locally or on **Google Colab with a free T4 GPU** for faster execution.
+This repository contains a **semantic search system** for code and documents, including **fine-tuning**, **vector storage**, and **evaluation metrics**.  
+The project runs entirely in a **single Colab notebook**, which can be executed multiple times with different configurations for experimentation.
 
-> **Note:** The full Table of Contents is available inside the notebook for easier navigation.
+It can be run **locally** or on **Google Colab** with a free **T4 GPU** for faster execution.
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents (Notebook Sections)
 
-1. **Libraries (`LIBS`)**  
-   Lists all required Python libraries used in the project for data processing, embedding, and vector search.
+1. **LIBS**  
+   Lists all Python libraries used for data processing, embeddings, and vector search.
 
-2. **Configuration (`Config`)**  
-   Contains configuration settings, including vector database parameters, and fine-tuning hyperparameters.
+2. **Config**  
+   Configuration settings: fine-tuning hyperparameters, vector DB parameters, embedding options (full function vs. names only).
 
-3. **Client (`CLIENT`)**  
-   Code for interacting with the search engine or vector database, sending queries, and retrieving results.
+3. **Weaviate DB**  
+   Setup, initialization, and batch insertion methods for the embedded Weaviate vector database.
 
 4. **Document Schemas**  
-   Defines the structure of documents and data objects used in the vector store.
+   Defines document types and their structure for storage and retrieval.
 
 5. **Search Engine**  
-   Implements the semantic search logic, including indexing, embedding, and query handling.
+   Implements semantic search logic, indexing, embedding, and query handling.
 
-6. **Metrics (`METRICS`)**  
-   Contains evaluation metrics for measuring search quality, similarity, and retrieval performance.
+6. **METRICS**  
+   Evaluation metrics for retrieval performance: **Recall**, **MRR**, **NDCG**, etc.
 
-7. **Loss Function Selection** *(discussion/text)*  
-   Explanation of the different loss functions considered for fine-tuning the embedding model and rationale for selection.
+7. **Fine-tuning**  
+   Scripts and logic for fine-tuning embeddings on code and document datasets.
 
-8. **Fine-tuning**  
-   Code and scripts for fine-tuning the embedding model on your dataset for improved semantic search accuracy.
+8. **Data Loading**  
+   Loading, preprocessing, and splitting datasets for training and evaluation.
 
-9. **Data Loading (`DATA LOADING`)**  
-   Handles loading, preprocessing, and batching of datasets for embedding or fine-tuning.
+9. **Demo**  
+   Example queries for **papers** and **code**, demonstrating the search system in action.
 
-10. **Demos (`DEMOS`)**  
-    Example notebooks and scripts demonstrating how to use the search system with sample queries.
+10. **Plot Losses**  
+    Visualization of training loss curves.
 
-11. **Main Execution (`MAIN`)**  
-    Entry point of the project, orchestrating the workflow from data loading to search evaluation.
+11. **MAIN**  
+    Entry point for orchestrating workflow; defines the main function and other orchestration logic.
 
-12. **Effect of Using Function Names Only** *(discussion/text)*  
-    Analysis of how restricting input to only function names impacts embedding quality and search performance.
+12. **RUN**  
+    Executes the entire pipeline: prints all results, generates plots, and runs evaluations.  
+    > Sections above RUN only define functions, classes, and configurations. RUN executes everything.
 
-13. **Effect of Updating Vector Storage Hyperparameters** *(discussion/text)*  
-    Discussion on how tuning the vector store parameters affects retrieval accuracy and performance.
+13. **DISCUSSION**  
+    Textual discussion of experiments, findings, and design choices:  
+    - **Model Choice**  
+    - **Loss Function Choice**  
+    - **Effect of Using Function Names Only**  
+    - **🔍 Effect of HNSW Hyperparameters on Retrieval Metrics**  
+    - **📊 Results: Effect of HNSW Database Hyperparameters**  
+    - **🏁 Conclusion**
 
 ---
 
-## Setup & Running
+## ⚡ Setup & Running
 
-You can run the notebook directly in **Google Colab**:
-
-1. Open Colab: [https://colab.research.google.com/](https://colab.research.google.com/)
-2. Upload `cosqa_evaluation.ipynb` or open it directly from GitHub.
-3. Make sure to **enable GPU**:
-   - Runtime → Change runtime type → Hardware accelerator → GPU (T4 is free)
+1. Open [Google Colab](https://colab.research.google.com/).  
+2. Upload `semantic_search.ipynb` or open it directly from GitHub.  
+3. Enable GPU:  
+   - Runtime → Change runtime type → Hardware accelerator → **GPU (T4)**  
 4. Run all cells.  
 
-**Note:** Running on CPU is much slower, so GPU is recommended for embedding computation and fine-tuning.
+> **Tip:** You can run the notebook **multiple times with different configurations** to test fine-tuning settings, embedding strategies, or HNSW parameters.
 
 ---
 
-## Notes
+## 🔧 Notes
 
-- `Config.func_name_embedding` controls whether embeddings are computed from function names or full function bodies.  
-- `Config.vector_index_config` contains Weaviate HNSW hyperparameters affecting search metrics.  
-- Everything runs in the notebook, no separate `requirements.txt` is required.
+- **Embeddings:** Controlled by `Config.func_name_embedding` → full function vs function name only.  
+- **DB Hyperparameters:** Controlled by `Config.vector_index_config` → HNSW parameters affect search metrics, not embedding quality.  
+- **All code runs in a single notebook**, no separate `requirements.txt` is needed.  
+- **RUN** section produces all final results (prints, plots, evaluation tables). Sections above define classes, functions, and configurations only.
