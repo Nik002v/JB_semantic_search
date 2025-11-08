@@ -5,6 +5,8 @@ The project runs entirely in a **single Colab notebook**, which can be executed 
 
 It can be run **locally** or on **Google Colab** with a free **T4 GPU** for faster execution.
 
+> 💡 **Tip:** Use the **Table of Contents tab in Colab** for faster navigation between sections.
+
 ---
 
 ## 📚 Table of Contents (Notebook Sections)
@@ -60,7 +62,7 @@ It can be run **locally** or on **Google Colab** with a free **T4 GPU** for fast
 ## ⚡ Setup & Running
 
 1. Open [Google Colab](https://colab.research.google.com/).  
-2. Upload `semantic_search.ipynb` or open it directly from GitHub.  
+2. Upload `semantic_search_project.ipynb` or open it directly from GitHub.  
 3. Enable GPU:  
    - Runtime → Change runtime type → Hardware accelerator → **GPU (T4)**  
 4. Run all cells.  
@@ -75,3 +77,4 @@ It can be run **locally** or on **Google Colab** with a free **T4 GPU** for fast
 - **DB Hyperparameters:** Controlled by `Config.vector_index_config` → HNSW parameters affect search metrics, not embedding quality.  
 - **All code runs in a single notebook**, no separate `requirements.txt` is needed.  
 - **RUN** section produces all final results (prints, plots, evaluation tables). Sections above define classes, functions, and configurations only.
+- Use **Colab Table of Contents tab** for **faster navigation** between sections.
