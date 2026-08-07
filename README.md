@@ -5,6 +5,9 @@ The project runs entirely in a **single Colab notebook**, which can be executed 
 
 It can be run **locally** or on **Google Colab** with a free **T4 GPU** for faster execution.
 
+For full methodology, results and discussion, see the
+[project report](reports/jb_semantic_search_report.pdf).
+
 > 💡 **Tip:** Use the **Table of Contents tab in Colab** for faster navigation between sections.
 
 ---
@@ -68,6 +71,15 @@ It can be run **locally** or on **Google Colab** with a free **T4 GPU** for fast
 4. Run all cells.  
 
 > **Tip:** You can run the notebook **multiple times with different configurations** to test fine-tuning settings, embedding strategies, or HNSW parameters.
+
+---
+
+## Repository Structure
+
+- [`semantic_search_project.ipynb`](semantic_search_project.ipynb) — executable Colab notebook containing the full pipeline and saved experiment outputs
+- [`reports/jb_semantic_search_report.pdf`](reports/jb_semantic_search_report.pdf) — portfolio-ready technical report
+- [`reports/jb_semantic_search_report.docx`](reports/jb_semantic_search_report.docx) — editable report document
+- [`reports/jb_semantic_search_report.md`](reports/jb_semantic_search_report.md) — report source
 
 ---
 
